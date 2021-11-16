@@ -1,0 +1,297 @@
+body{
+    background-color: hsl(0, 0%, 100%);
+    display:flex; 
+    flex-flow: column wrap;    
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 100%;
+}
+
+header{
+    background-color: hsl(195, 4%, 20%);
+    display: flex;
+    flex-flow: row wrap; 
+    height: 7vh;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    padding: 0.5em 1em;
+    z-index: 100;
+}
+
+main{
+    margin: 1em auto;
+    width: 90%;
+}
+
+footer{
+    margin-top: auto; 
+    width: 100%;
+    background-color: hsl(195, 4%, 20%);
+    display: flex;
+    flex-flow: row wrap; 
+    justify-content: space-around;
+}
+
+.main-element{
+    margin-bottom: 2em;
+}
+
+.footer-element{
+    margin-bottom: 1em;
+}
+
+/*/// Tipografia ///*/
+h1,h2,h3,p,a,button{
+    font-family: "Overpass";
+}
+h1,li{
+    color: hsl(0, 0%, 100%);
+}
+h1{
+    font-size: 2.5em;
+}
+h2{
+    font-size: 2.5em; 
+    color:hsl(78, 86%, 60%);
+    margin-bottom: 1em;
+}
+p{
+    line-height: 1.3em;
+}
+
+/*/// Logo ///*/
+
+.logo{
+    width: max-content;
+    align-self: center;
+}
+
+.logo svg{
+    height: 3em;
+    width: 3em;
+}
+
+.logo svg path{
+    fill:hsl(78, 86%, 60%);
+}
+.title-container{
+    display: flex;
+    flex-flow: row wrap;
+}
+.title{
+    margin-left: 1em;
+    align-self: center;
+}
+
+/*/// Menu ///*/
+
+.menu{
+    align-self: flex-end;
+}
+.menu li{
+    display: inline-block;
+    padding: 0 0.2em;
+    font-size: 1.2em;
+}
+li:hover a{
+    color:hsl(78, 86%, 60%);
+    cursor: pointer;
+}
+.menu-burger{
+    display:none;
+}
+
+/*/// Slider ///*/
+
+.slider{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    max-height: 88vh;
+}
+.slider h2{
+    font-size: 3.5em;
+}
+.slider-element{
+    position: absolute;
+}
+.slider-img{
+    width: 100%;
+}
+.slider-img img{
+    width: 100%;
+}
+.slider-title{
+    top: 20%;
+    left: 10em;
+}
+.slider-button{
+    top:40%;
+    left: 10em;
+}
+.slider svg{
+    width: 3em;
+    height: 3em;   
+}
+.slider svg path{
+    fill:hsl(0, 0%, 100%);
+}
+.slider .right-arrow{
+    top:50%;
+    right: 2em;
+}
+.slider .left-arrow{
+    top:50%;
+    left: 2em;
+}
+.slider svg:hover path{
+    fill:hsl(78, 86%, 60%);
+    cursor: pointer;
+}
+.slider-button button{
+    border: solid 0.3em hsl(78, 86%, 60%);
+    border-radius: 0.2em;
+    padding: 0.5em;
+    background-color: hsla(0, 0%, 0%, 0.384);
+    font-size: 1.5em;
+    color: hsl(78, 86%, 60%);
+}
+ button:hover{
+    cursor: pointer;
+    border-color: hsl(0, 0%, 0%);
+    background-color: hsl(78, 86%, 60%);
+    color: hsl(0, 0%, 0%);
+}
+
+/*/// News ///*/
+
+.news{
+    margin: 2em 0;
+}
+.container-news{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.individual-new{
+    max-width: 30%;
+}
+.new-img{
+    max-width: 100%;
+}
+.new-img img{
+    max-width: 100%;
+}
+.new-title{
+    margin-top: 0.5em;
+}
+
+/*/// Info ///*/
+.info{
+    margin: 2em 0; 
+}
+.container-info{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.info-text p{
+    margin-bottom: 0.5em;
+}
+.info-element{
+    max-width: 45%;
+}
+.info-img img{
+    max-width: 100%;
+    max-height: 30em;
+}
+
+/*/// Footer ///*/
+
+.footer-img{
+    max-width: 30%;
+}
+.footer-img img{
+    width: 100%;
+}
+.footer-info{
+   display: flex;
+   flex-flow:row wrap;
+   justify-content: center;
+   align-content: center; 
+}
+.footer-info p{
+    color:hsl(0, 0%, 100%);
+    text-align: center;
+}
+@media (max-width:1024px){
+    .slider h2{
+        font-size: 2.5em;
+    }
+    .info{
+        position: relative;
+    }
+    .info .info-img{
+        position: absolute;
+        z-index: -10;
+    }
+    .info-element{
+        max-width: 100%;
+    }
+}
+@media (max-width:768px){
+    h1{
+       font-size: 2em; 
+    }
+    .logo svg{
+        height: 2em;
+        width: 2em;
+    }
+    .menu li{
+        font-size: 1em;
+    }
+    h2{
+        font-size: 1.5em;
+    }
+    .slider-button button{
+        border: solid 0.2em hsl(78, 86%, 60%);
+        padding: 0.3em;
+        font-size: 1em;
+    }
+    .slider-title{
+        top:20%;
+        left: 5em;
+    }
+    .slider-button{
+        top:40%;
+        left: 5em;
+    }
+    .menu{
+        display: none;
+    }
+    .menu-burger{
+        display:block;
+        align-self: center;
+    }
+    .menu-burger svg{
+        width: 2em;
+        height: 2em;
+    }
+    .menu-burger svg path{
+       fill: hsl(0, 0%, 100%);
+    }
+}
+@media (max-width:480px){
+    .slider h2{
+        font-size: 1.5em;
+    }
+    .container-news{
+        flex-flow: column wrap;
+    }
+    .individual-new{
+        max-width: 100%;
+        margin-bottom: 2em;
+    }
+}
