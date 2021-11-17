@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- <link rel="shortcut icon" href="images/favicon.png"> -->
+		<link rel="shortcut icon" href="img/favicon.ico">
 
 		<title>Maquetación</title>
 		<meta name="description" content="Descripción de prueba para practicar">
@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="news">
-                <div>
+                <div class="news-title">
                     <h2>Noticias destacadas</h2>
                 </div>
                 <div class="container-news">
@@ -100,7 +100,9 @@
                 </div>
             </div>
             <div class="info">
-                <h2>Información del juego</h2>
+                <div class="info-title">
+                    <h2>Información del juego</h2>
+                </div>
                 <div class="container-info">
                     <div class="info-element info-text">
                         <p>Elden Ring es un juego de rol de acción en tercera persona desarrollado por FromSoftware.</p>
@@ -116,6 +118,9 @@
                     </div>
                 </div>
             </div>
+            <div class="model-3d">
+                <model-viewer alt="Bonfire" src="3d/bonfire.glb" auto-rotate></model-viewer>
+            </div>
         </main>
         <footer>
             <div class="footer-logo">
@@ -126,6 +131,7 @@
             </div>
         </footer>
     </body>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
         <script>
             WebFont.load({
@@ -134,65 +140,5 @@
                 }
             });        
         </script>
-        <script>
-            var allimg = document.querySelectorAll(".slider .slider-img");
-            var right = document.querySelector(".slider .right-arrow");
-            var left = document.querySelector(".slider .left-arrow");
-            var imgright = document.querySelector(".slider .img-right");
-            var imgcenter = document.querySelector(".slider .img-center");
-            var imgleft = document.querySelector(".slider .img-left");
-            var numbercenter = 1;
-
-            right.onclick = function(){
-                for(i=0;i<allimg.length;i++){
-                    allimg[i].style.cssText = "transition: transform ease 1s;"
-                }
-                numbercenter++
-                imgright.style.cssText = "transform: translateX(0%);"
-                imgcenter.style.cssText = "transform: translateX(-100%);"
-                imgleft.style.cssText = "transform: translateX(-200%);"
-
-                setTimeout(changeimg, 1000);
-            };
-            left.onclick = function(){
-                for(i=0;i<allimg.length;i++){
-                    allimg[i].style.cssText = "transition: transform ease 1s;"
-                }
-                numbercenter--
-                imgright.style.cssText = "transform: translateX(200%);"
-                imgcenter.style.cssText = "transform: translateX(100%);"
-                imgleft.style.cssText = "transform: translateX(0%);"
-                setTimeout(changeimg, 1000);
-            };
-            
-            function changeimg(){
-                for(i=0;i<allimg.length;i++){
-                    allimg[i].style.cssText = "transition: transform ease 0s;"
-                }
-                if(numbercenter > 5){
-                    numbercenter= 1;
-                }
-                if(numbercenter < 1){
-                    numbercenter= 5;
-                }
-                if(numbercenter >= 5){
-                    numberright= 1;
-                }
-                else{
-                    numberright= numbercenter+1; 
-                }
-                if(numbercenter <= 1){
-                    numberleft= 1;
-                }
-                else{
-                    numberleft= numbercenter-1; 
-                }
-                document.querySelector(".slider .img-right img").src = "img/slider"+ numberright +".webp"
-                document.querySelector(".slider .img-center img").src = "img/slider"+ numbercenter +".webp"
-                document.querySelector(".slider .img-left img").src = "img/slider"+ numberleft +".webp" 
-                imgright.style.cssText = "transform: translateX(100%); transition: transform ease 0s;"
-                imgcenter.style.cssText = "transform: translateX(0%); transition: transform ease 0s;"
-                imgleft.style.cssText = "transform: translateX(-100%); transition: transform ease 0s;"
-            }
-        </script>
+        <script src="js/main.js"></script>
 </html>
