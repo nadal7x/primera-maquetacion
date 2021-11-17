@@ -42,8 +42,16 @@
         </header>
         <main>
             <div class="slider">
-                <div class="slider-img">
-                    <img src="img/slider1.webp" alt="elder ring">
+                <div class="slider-images">
+                    <div class="slider-img img-left">
+                        <img src="img/slider5.webp" alt="elder ring">
+                    </div>
+                    <div class="slider-img img-center">
+                        <img src="img/slider1.webp" alt="elder ring">
+                    </div>
+                    <div class="slider-img img-right">
+                        <img src="img/slider2.webp" alt="elder ring">
+                    </div>
                 </div>
                 <div class="slider-element slider-title">
                     <h2>Elder Ring</h2>
@@ -129,16 +137,31 @@
             });        
         </script>
         <script>
-            var mainimg = document.querySelector(".slider-img img");
+            var allimg = document.querySelectorAll(".slider-img img");
             var right = document.querySelector(".slider .right-arrow");
             var left = document.querySelector(".slider .left-arrow");
-            var numberimg = 1;
+            var imgright = document.querySelector(".slider .img-right");
+            var imgcenter = document.querySelector(".slider .img-center");
+            var imgleft = document.querySelector(".slider .img-left");
+            var numbercenter = 1;
 
             right.onclick = function(){
-                numberimg++
+                numbercenter++
+                imgright.style.cssText = "transform: translateX(0%) translateY(-200%);"
+                imgcenter.style.cssText = "transform: translateX(-100%) translateY(-100%);"
+                imgleft.style.cssText = "transform: translateX(-200%);"
             };
             left.onclick = function(){
-                numberimg--
+                numbercenter--
+                imgright.style.cssText = "transform: translateX(200%) translateY(-200%);"
+                imgcenter.style.cssText = "transform: translateX(100%) translateY(-100%);"
+                imgleft.style.cssText = "transform: translateX(0%);"
             };
+
+            function changeimg(){
+                imgright.src = "img/slider"+ numbercenter +".webp"
+                imgcenter.src = "img/slider"+ numbercenter +".webp"
+                imgleft.src = "img/slider"+ numbercenter +".webp" 
+            }
         </script>
 </html>
