@@ -67,14 +67,10 @@ p{
     align-self: center;
 }
 
-.logo svg{
-    height: 3em;
-    width: 3em;
+.logo img{
+    width: 5em;
 }
 
-.logo svg path{
-    fill:hsl(78, 86%, 60%);
-}
 .title-container{
     display: flex;
     flex-flow: row wrap;
@@ -94,12 +90,24 @@ p{
     padding: 0 0.2em;
     font-size: 1.2em;
 }
+.menu li a{
+    transition: color ease 0.4s;
+}
 li:hover a{
     color:hsl(78, 86%, 60%);
     cursor: pointer;
 }
 .menu-burger{
     display:none;
+}
+.menu-burger svg path{
+    transition: fill ease 0.4s; 
+}
+.menu-burger:hover{
+    cursor: pointer;
+}
+.menu-burger:hover svg path{
+    fill: hsl(78, 86%, 60%);
 }
 
 /*/// Slider ///*/
@@ -129,8 +137,6 @@ li:hover a{
 .slider-img img{
     width: 100%;
 }
-.img-center{
-}
 .img-right{
     transform: translateX(100%);
     position: absolute;
@@ -159,15 +165,19 @@ li:hover a{
     fill:hsl(0, 0%, 100%);
 }
 .slider .right-arrow{
-    top:50%;
+    top:30%;
     right: 2em;
+    padding: 10% 0;
 }
 .slider .left-arrow{
-    top:50%;
+    top:30%;
     left: 2em;
+    padding: 10% 0;
 }
-.slider svg:hover path{
+.slider .right-arrow:hover path,.slider .left-arrow:hover path{
     fill:hsl(78, 86%, 60%);
+}
+.slider .right-arrow:hover,.slider .left-arrow:hover{
     cursor: pointer;
 }
 .slider-button button{
@@ -200,6 +210,11 @@ li:hover a{
 }
 .new-img{
     max-width: 100%;
+    transition: filter ease 0.4s;
+}
+.new-img:hover{
+    filter: brightness(0.8);
+    cursor: pointer;
 }
 .new-img img{
     max-width: 100%;
